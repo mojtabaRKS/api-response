@@ -25,13 +25,14 @@ class SuccessResponseTest extends TestCase
      */
     public function setUp(SuccessResponse $successResponse, Faker $faker): void
     {
-        $this->successResponse = $successResponse
+        $this->successResponse = $successResponse;
+        $this->faker = $faker;
     }
 
     /**
      * @retun void
      */
-    public function test_can_set_code_in_response()
+    public function test_can_set_code_in_response() : void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setCode'));
         $this->assertTrue(method_exists($this->successResponse, 'setCode'));
@@ -45,7 +46,7 @@ class SuccessResponseTest extends TestCase
     /**
      * @retun void
      */
-    public function test_can_set_message_in_response()
+    public function test_can_set_message_in_response() : void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setMessage'));
         $this->assertTrue(method_exists($this->successResponse, 'getMessage'));
@@ -59,7 +60,7 @@ class SuccessResponseTest extends TestCase
     /**
      * @retun void
      */
-    public function test_can_set_data_in_response()
+    public function test_can_set_data_in_response() : void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setData'));
         $this->assertTrue(method_exists($this->successResponse, 'getData'));
@@ -77,26 +78,26 @@ class SuccessResponseTest extends TestCase
     /**
      * @retun void
      */
-    public function test_can_set_status_in_response()
+    public function test_can_set_status_in_response(): void
     {
-        $this->assertTrue(method_exists($this->successResponse, 'setStatus'));
-        $this->assertTrue(method_exists($this->successResponse, 'getStatus'));
+        $this->assertTrue(method_exists($this->successResponse, 'setSuccessStatus'));
+        $this->assertTrue(method_exists($this->successResponse, 'getSuccessStatus'));
 
-        $fakeStatus = true;
-        $this->successResponse->setStatus($fakeStatus);
-        $this->assertIsBool($this->successResponse->getStatus());
-        $this->assertEquals($fakeStatus, $this->successResponse->getStatus());
+        $fakeSuccessStatus = true;
+        $this->successResponse->setSuccessStatus($fakeSuccessStatus);
+        $this->assertIsBool($this->successResponse->getSuccessStatus());
+        $this->assertEquals($fakeSuccessStatus, $this->successResponse->getSuccessStatus());
     }
 
     /**
      * @retun void
      */
-    public function test_can_render_response()
+    public function test_can_render_response() : void
     {
         $successResponse = $this->successResponse
             ->setCode(Response::HTTP_OK)
             ->setMessage($this->faker->text)
-            ->setStatus(true)
+            ->setSuccessStatus(true)
             ->setData([
                 'name' => $this->faker->name,
                 'email' => $this->faker->email
