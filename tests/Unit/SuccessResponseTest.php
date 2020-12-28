@@ -1,38 +1,29 @@
 <?php
 
-namespace Liateam\ApiResponse\Tests\Unit;
+namespace Tests\Unit;
 
-use Faker\Generator as Faker;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
-use PHPUnit\Framework\TestCase;
-use Liateam\ApiResponse\SuccessResponse;
+use Liateam\ApiResponse\Responses\SuccessResponse;
+use Tests\BaseTestCase;
 
-class SuccessResponseTest extends TestCase
+class SuccessResponseTest extends BaseTestCase
 {
     /**
      * @var SuccessResponse
      */
     public $successResponse;
 
-    /**
-     * @var Faker $faker
-     */
-    public $faker;
-
-    /**
-     * @param SuccessResponse $successResponse
-     * @param Faker $faker
-     */
-    public function setUp(SuccessResponse $successResponse, Faker $faker): void
+    public function setUp(): void
     {
-        $this->successResponse = $successResponse;
-        $this->faker = $faker;
+        $this->successResponse = new SuccessResponse;
+        parent::setUp();
     }
 
     /**
      * @retun void
      */
-    public function test_can_set_code_in_response() : void
+    public function test_can_set_code_in_success_response() : void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setCode'));
         $this->assertTrue(method_exists($this->successResponse, 'setCode'));
@@ -46,7 +37,7 @@ class SuccessResponseTest extends TestCase
     /**
      * @retun void
      */
-    public function test_can_set_message_in_response() : void
+    public function test_can_set_message_in_success_response() : void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setMessage'));
         $this->assertTrue(method_exists($this->successResponse, 'getMessage'));
@@ -60,7 +51,7 @@ class SuccessResponseTest extends TestCase
     /**
      * @retun void
      */
-    public function test_can_set_data_in_response() : void
+    public function test_can_set_data_in_success_response() : void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setData'));
         $this->assertTrue(method_exists($this->successResponse, 'getData'));
@@ -71,14 +62,14 @@ class SuccessResponseTest extends TestCase
         ];
 
         $this->successResponse->setData($fakeData);
-        $this->assertIsArray($this->successResponse->getMessage());
-        $this->assertEquals($fakeData, $this->successResponse->getMessage());
+        $this->assertIsArray($this->successResponse->getData());
+        $this->assertEquals($fakeData, $this->successResponse->getData());
     }
 
     /**
      * @retun void
      */
-    public function test_can_set_status_in_response(): void
+    public function test_can_set_status_in_success_response(): void
     {
         $this->assertTrue(method_exists($this->successResponse, 'setSuccessStatus'));
         $this->assertTrue(method_exists($this->successResponse, 'getSuccessStatus'));
@@ -104,6 +95,6 @@ class SuccessResponseTest extends TestCase
             ])
             ->render();
 
-        $this->assertInstanceOf(Response::class, $successResponse);
+        $this->assertInstanceOf(JsonResponse::class, $successResponse);
     }
 }
