@@ -3,18 +3,18 @@
 namespace Liateam\ApiResponse\Responses;
 
 use \Illuminate\Http\JsonResponse;
+use Liateam\ApiResponse\Traits\HasProperty;
 use Illuminate\Http\Response as HttpResponse;
-use Liateam\ApiResponse\HasProperty;
-use Liateam\ApiResponse\Response;
+use Liateam\ApiResponse\Contracts\ResponseContract;
 
-class SuccessResponse implements Response
+class SuccessResponse implements ResponseContract
 {
     use HasProperty;
 
     /**
      * @var array $data
      */
-    public $data = [];
+    private $data = [];
 
     /**
      * CustomResponse constructor.
