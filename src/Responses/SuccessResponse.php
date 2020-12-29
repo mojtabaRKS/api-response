@@ -21,7 +21,7 @@ class SuccessResponse implements Response
      * @param int $code
      * @param string $message
      */
-    public function __construct($code = HttpResponse::HTTP_OK , $message = 'Ok')
+    public function __construct($code = HttpResponse::HTTP_OK, $message = 'Ok')
     {
         $this->setCode($code)
             ->setMessage($message)
