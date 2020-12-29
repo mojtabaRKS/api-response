@@ -2,10 +2,10 @@
 
 namespace Tests\Unit;
 
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
-use Liateam\ApiResponse\Responses\SuccessResponse;
 use Tests\BaseTestCase;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
+use Liateam\ApiResponse\Responses\SuccessResponse;
 
 class SuccessResponseTest extends BaseTestCase
 {
