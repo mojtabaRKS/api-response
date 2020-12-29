@@ -32,14 +32,18 @@ If you prefer to do this manually, create ~/.composer/auth.json, with the follow
 easily copy below code and paste in your `composer.json`
 
 ```
-{
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@git.liateam.net:php/packages/api-response.git"
-    }
-  ]
-}
+"repositories": {
+        "liateam/api-response" : {
+            "type": "vcs",
+            "url": "git@git.liateam.net:php/packages/api-response.git"
+        }
+    },
+```
+
+easily copy below code and paste in your `composer.json` -> `require` section
+
+```
+"liateam/api-response": "1.0.0"
 ```
 
 run the command below in your project :
@@ -52,7 +56,7 @@ $ composer update
 
 you can use Facade or Dependency injection in your project :
 
-## Facade Example : 
+## Facade Example :
 
 ``````
 use Liateam\ApiResponse\ApiResponse;
@@ -68,7 +72,7 @@ ApiResponse::make('success')
         .
     ])
     ->render();
-    
+
 
 ApiResponse::make('failure')
     // ->setCode(xxxx)
@@ -81,7 +85,7 @@ ApiResponse::make('failure')
         .
     ])
     ->render();
-    
+
 
 ApiResponse::make('custom')
     // ->setCode(xxxx)
@@ -109,8 +113,8 @@ use Liateam\ApiResponse\Responses\SuccessResponse;
 use Liateam\ApiResponse\Responses\FailureResponse;
 
 __construct(
-    SuccessResponse $successResponse, 
-    ErrorResponse $errorResponse, 
+    SuccessResponse $successResponse,
+    ErrorResponse $errorResponse,
     CustomResponse $customResponse
     ) {
         $this->successResponse
@@ -133,7 +137,7 @@ $successResponse = $this->successResponse
         .
     ])
     ->render();
-    
+
 
 
 $errorResponse = $this->errorResponse
@@ -147,7 +151,7 @@ $errorResponse = $this->errorResponse
         .
     ])
     ->render();
-    
+
 
 
 $customResponse = $this->customResponse
