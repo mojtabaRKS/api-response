@@ -1,10 +1,10 @@
 <?php
 
-namespace Liateam\ApiResponse;
+namespace Liateam\ApiResponse\Contracts;
 
 use \Illuminate\Http\JsonResponse;
 
-interface Response
+interface ResponseContract
 {
     /**
      * @return JsonResponse
