@@ -3,8 +3,9 @@
 namespace Liateam\ApiResponse\Responses;
 
 use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\HasProperty;
 use Liateam\ApiResponse\Response;
+use Liateam\ApiResponse\HasProperty;
+use \Illuminate\Http\Response as HttpResponse;
 
 class CustomResponse implements Response
 {
@@ -15,14 +16,11 @@ class CustomResponse implements Response
      */
     private $additional = [];
 
-    public function render(): JsonResponse
+    public function __construct($code = HttpResponse::HTTP_MULTI_STATUS, $message = 'multi status')
     {
-        $this->setResult(['additional' => $this->getAdditional()]);
-
-        return response()->json(
-            $this->getResult(),
-            $this->getCode()
-        );
+        $this->setCode($code)
+            ->setMessage($message)
+            ->setSuccessStatus(true);
     }
 
     /**
@@ -41,5 +39,18 @@ class CustomResponse implements Response
     {
         $this->additional = $additional;
         return $this;
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function render(): JsonResponse
+    {
+        $this->setResult(['additional' => $this->getAdditional()]);
+
+        return response()->json(
+            $this->getResult(),
+            $this->getCode()
+        );
     }
 }
