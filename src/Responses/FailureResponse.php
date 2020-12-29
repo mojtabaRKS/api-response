@@ -3,11 +3,11 @@
 namespace Liateam\ApiResponse\Responses;
 
 use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\Response;
-use Liateam\ApiResponse\HasProperty;
+use Liateam\ApiResponse\Traits\HasProperty;
 use \Illuminate\Http\Response as HttpResponse;
+use Liateam\ApiResponse\Contracts\ResponseContract;
 
-class FailureResponse implements Response
+class FailureResponse implements ResponseContract
 {
     use HasProperty;
 
