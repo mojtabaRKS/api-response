@@ -3,8 +3,9 @@
 namespace Liateam\ApiResponse\Responses;
 
 use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\HasProperty;
 use Liateam\ApiResponse\Response;
+use Liateam\ApiResponse\HasProperty;
+use \Illuminate\Http\Response as HttpResponse;
 
 class FailureResponse implements Response
 {
@@ -14,6 +15,13 @@ class FailureResponse implements Response
      * @var array $error
      */
     public $error = [];
+
+    public function __construct($code = HttpResponse::HTTP_NOT_ACCEPTABLE, $message = 'something went wrong!')
+    {
+        $this->setCode($code)
+            ->setMessage($message)
+            ->setSuccessStatus(false);
+    }
 
     /**
      * @return array
