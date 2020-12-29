@@ -3,6 +3,7 @@
 namespace Liateam\ApiResponse\Responses;
 
 use \Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response as HttpResponse;
 use Liateam\ApiResponse\HasProperty;
 use Liateam\ApiResponse\Response;
 
@@ -14,6 +15,19 @@ class SuccessResponse implements Response
      * @var array $data
      */
     public $data = [];
+
+    /**
+     * CustomResponse constructor.
+     * @param int $code
+     * @param string $message
+     */
+    public function __construct($code = HttpResponse::HTTP_OK , $message = 'Ok')
+    {
+        $this->setCode($code)
+            ->setMessage($message)
+            ->setSuccessStatus(true);
+    }
+
 
     /**
      * @return array
