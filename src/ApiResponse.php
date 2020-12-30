@@ -14,10 +14,6 @@ class ApiResponse
      */
     public static function __callStatic($className, $arguments): ResponseContract
     {
-        if (empty($className)) {
-            throw new RuntimeException("please set your desired response !");
-        }
-
         $className = ucfirst($className);
         $nameSpace = "Liateam\\ApiResponse\\Responses";
         $class = "{$nameSpace}\\{$className}";
