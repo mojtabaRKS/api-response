@@ -5,12 +5,32 @@ namespace Liateam\ApiResponse\Traits;
 
 trait HasProperty
 {
+    /**
+     * response status code
+     *
+     * @var int|null $code
+     */
     private $code;
 
+    /**
+     * response status message
+     *
+     * @var string|null $message
+     */
     private $message;
 
+    /**
+     * response success status
+     *
+     * @var int $successStatus
+     */
     private $successStatus;
 
+    /**
+     * response result
+     *
+     * @var array $result
+     */
     private $result = [];
 
     /**

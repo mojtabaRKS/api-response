@@ -5,8 +5,8 @@ namespace Tests\Unit;
 use Tests\BaseTestCase;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
+use Liateam\ApiResponse\Traits\HasProperty;
 use Liateam\ApiResponse\Responses\FailureResponse;
-
 class FailureResponseTest extends BaseTestCase
 {
     /**
@@ -21,7 +21,20 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Traits\HasProperty
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @return void
+     */
+    public function test_class_uses_hasProperty_trait () : void
+    {
+        $this->AssertTrue(in_array(HasProperty::class , class_uses($this->failureResponse)));
+    }
+
+    /**
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setCode
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getCode
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @return void
      */
     public function test_can_set_code_in_failure_response(): void
     {
@@ -36,7 +49,10 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setMessage
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getMessage
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @return void
      */
     public function test_can_set_message_in_failure_response(): void
     {
@@ -51,7 +67,10 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setError
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getError
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @return void
      */
     public function test_can_set_error_in_failure_response(): void
     {
@@ -69,7 +88,10 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @return void
      */
     public function test_can_set_status_in_failure_response(): void
     {
@@ -83,8 +105,20 @@ class FailureResponseTest extends BaseTestCase
         $this->assertEquals($fakeSuccessStatus, $this->failureResponse->getSuccessStatus());
     }
 
-    /**
-     * @retun void
+      /**
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::render
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getCode
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getMessage
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getResult
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setCode
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setMessage
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setResult
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::getError
+     * @covers Liateam\ApiResponse\Responses\FailureResponse::setError
+     * @return void
      */
     public function test_can_render_failure_response(): void
     {

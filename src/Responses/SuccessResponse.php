@@ -23,9 +23,9 @@ class SuccessResponse implements ResponseContract
      */
     public function __construct($code = HttpResponse::HTTP_OK, $message = 'Ok')
     {
-        $this->setCode($code)
-            ->setMessage($message)
-            ->setSuccessStatus(true);
+        $this->code = $code;
+        $this->message = $message;
+        $this->successStatus = true;
     }
 
 
