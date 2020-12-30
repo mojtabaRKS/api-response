@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\BaseTestCase;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
+use Liateam\ApiResponse\Traits\HasProperty;
 use Liateam\ApiResponse\Responses\SuccessResponse;
 
 class SuccessResponseTest extends BaseTestCase
@@ -21,7 +22,20 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Traits\HasProperty
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @return void
+     */
+    public function test_class_uses_hasProperty_trait () : void
+    {
+        $this->AssertTrue(in_array(HasProperty::class, class_uses($this->successResponse)));
+    }
+
+    /**
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setCode
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getCode
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @return void
      */
     public function test_can_set_code_in_success_response() : void
     {
@@ -35,7 +49,10 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setMessage
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getMessage
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @return void
      */
     public function test_can_set_message_in_success_response() : void
     {
@@ -49,7 +66,10 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setData
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getData
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @return void
      */
     public function test_can_set_data_in_success_response() : void
     {
@@ -67,7 +87,10 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @return void
      */
     public function test_can_set_status_in_success_response(): void
     {
@@ -81,7 +104,19 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @retun void
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::render
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getCode
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getMessage
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getResult
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setCode
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setMessage
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setResult
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setSuccessStatus
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::getData
+     * @covers Liateam\ApiResponse\Responses\SuccessResponse::setData
+     * @return void
      */
     public function test_can_render_response() : void
     {
