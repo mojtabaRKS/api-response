@@ -61,10 +61,10 @@ you can use Facade or Dependency injection in your project :
 ``````
 use Liateam\ApiResponse\ApiResponse;
 
-ApiResponse::make('success')
+ApiResponse::successResponse()
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
-    // ->setSuccessResponse(--boolean !!!--)
+    // ->setSuccessStatus(--boolean !!!--)
     // ->setData(--array-- => [  // --------------> SET DATA METHOD IS ONLY AVAILABLE FOR SUCCESS RESPONSE
         'projectName' => 'my awesome project',
         .
@@ -74,10 +74,10 @@ ApiResponse::make('success')
     ->render();
 
 
-ApiResponse::make('failure')
+ApiResponse::failureResponse()
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
-    // ->setSuccessResponse(--boolean !!!--)
+    // ->setSuccessStatus(--boolean !!!--)
     // ->setError(--array-- => [ // --------------> SET ERROR METHOD IS ONLY AVAILABLE FOR ERROR RESPONSE
         'error text' => 'looks like something went wrong',
         .
@@ -87,10 +87,10 @@ ApiResponse::make('failure')
     ->render();
 
 
-ApiResponse::make('custom')
+ApiResponse::customResponse()
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
-    // ->setSuccessResponse(--boolean !!!--)
+    // ->setSuccessStatus(--boolean !!!--)
     // ->setAttidional(--array-- => [  // --------------> SET ADDITIONAL METHOD IS ONLY AVAILABLE FOR CUSTOM RESPONSE
     //    'custom message' => 'custom message goes here',
     //    .

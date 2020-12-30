@@ -8,22 +8,18 @@ use Liateam\ApiResponse\Contracts\ResponseContract;
 class ApiResponse
 {
     /**
-     * @param string $instance
+     * @param $className
+     * @param $arguments
      * @return ResponseContract
-     * @throws RuntimeException
      */
-    public static function make(string $instance): ResponseContract
+    public static function __callStatic($className, $arguments): ResponseContract
     {
-        if (empty($instance)) {
-            throw new RuntimeException("please set your desired response !");
-        }
-
+        $className = ucfirst($className);
         $nameSpace = "Liateam\\ApiResponse\\Responses";
-        $instance = ucfirst($instance) . 'Response';
-        $class = "{$nameSpace}\\{$instance}";
+        $class = "{$nameSpace}\\{$className}";
 
         if (!class_exists($class)) {
-            throw new RuntimeException("class [{$instance}] not exists !");
+            throw new RuntimeException("class [{$class}] not exists !");
         }
 
         return new $class;
