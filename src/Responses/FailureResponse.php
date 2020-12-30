@@ -18,9 +18,9 @@ class FailureResponse implements ResponseContract
 
     public function __construct($code = HttpResponse::HTTP_NOT_ACCEPTABLE, $message = 'something went wrong!')
     {
-        $this->setCode($code)
-            ->setMessage($message)
-            ->setSuccessStatus(false);
+        $this->code = $code;
+        $this->message = $message;
+        $this->successStatus = false;
     }
 
     /**
