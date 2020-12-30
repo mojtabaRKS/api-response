@@ -18,9 +18,9 @@ class CustomResponse implements ResponseContract
 
     public function __construct($code = HttpResponse::HTTP_MULTI_STATUS, $message = 'multi status')
     {
-        $this->setCode($code)
-            ->setMessage($message)
-            ->setSuccessStatus(true);
+        $this->code = $code;
+        $this->message = $message;
+        $this->successStatus = true;
     }
 
     /**
