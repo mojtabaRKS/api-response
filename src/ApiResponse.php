@@ -19,13 +19,13 @@ class ApiResponse
         }
 
         $className = ucfirst($className);
-        if (!class_exists($className)) {
-            throw new RuntimeException("class [{$className}] not exists !");
-        }
-
         $nameSpace = "Liateam\\ApiResponse\\Responses";
         $class = "{$nameSpace}\\{$className}";
 
-        return new $class($arguments);
+        if (!class_exists($class)) {
+            throw new RuntimeException("class [{$class}] not exists !");
+        }
+
+        return new $class;
     }
 }
