@@ -8,16 +8,15 @@
             "email": "mojtaba.rakhisi@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
-            "Liateam\\ApiResponse\\": "src/"
+            "Liateam\\ApiResponse\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests"
+            "Liateam\\ApiResponse\\Tests\\": "tests"
         }
     }
 }
