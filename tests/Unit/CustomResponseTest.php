@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Liateam\ApiResponse\Traits\HasProperty;
 use Liateam\ApiResponse\Responses\CustomResponse;
+use Liateam\ApiResponse\Contracts\ResponseContract;
 
 class CustomResponseTest extends BaseTestCase
 {
@@ -22,13 +23,12 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers HasProperty
      * @covers CustomResponse::__construct
      * @return void
      */
     public function test_class_uses_hasProperty_trait () : void
     {
-        $this->AssertTrue(in_array(HasProperty::class , class_uses($this->customResponse)));
+        $this->assertInstanceOf(ResponseContract::class ,$this->customResponse);
     }
 
     /**
@@ -75,17 +75,23 @@ class CustomResponseTest extends BaseTestCase
      */
     public function test_can_set_additional_in_custom_response(): void
     {
-        $this->assertTrue(property_exists($this->customResponse , 'additional'));
-        $this->assertTrue(method_exists($this->customResponse, 'setAdditional'));
-        $this->assertTrue(method_exists($this->customResponse, 'getAdditional'));
+        $this->assertTrue(property_exists($this->customResponse , 'responseKey'));
+        $this->assertTrue(method_exists($this->customResponse, 'setResponseKey'));
+        $this->assertTrue(method_exists($this->customResponse, 'getResponseKey'));
+        $this->assertTrue(property_exists($this->customResponse , 'responseValue'));
+        $this->assertTrue(method_exists($this->customResponse , 'getResponseValue'));
+        $this->assertTrue(method_exists($this->customResponse , 'setResponseValue'));
+
+        $customResponse = $this->customResponse->setResponseKey('additional');
+        $this->assertEquals('additional' , $customResponse->getResponseKey());
 
         $fakeAdditional = [
             'text' => $this->faker->sentence,
         ];
 
-        $this->customResponse->setAdditional($fakeAdditional);
-        $this->assertIsArray($this->customResponse->getAdditional());
-        $this->assertEquals($fakeAdditional, $this->customResponse->getAdditional());
+        $this->customResponse->setResponseValue($fakeAdditional);
+        $this->assertIsArray($this->customResponse->getResponseValue());
+        $this->assertEquals($fakeAdditional, $this->customResponse->getResponseValue());
     }
 
     /**
@@ -128,7 +134,8 @@ class CustomResponseTest extends BaseTestCase
             ->setCode(Response::HTTP_OK)
             ->setMessage($this->faker->text)
             ->setSuccessStatus(true)
-            ->setAdditional([
+            ->setResponseKey('additional')
+            ->setResponseValue([
                 'text' => $this->faker->text,
             ])
             ->render();

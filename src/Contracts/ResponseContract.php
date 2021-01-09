@@ -3,11 +3,25 @@
 namespace Liateam\ApiResponse\Contracts;
 
 use \Illuminate\Http\JsonResponse;
+use Liateam\ApiResponse\Traits\HasProperty;
 
-interface ResponseContract
+abstract class ResponseContract
 {
+    use HasProperty;
+
+    
     /**
+     * renders the error response
+     *
      * @return JsonResponse
      */
-    public function render(): JsonResponse;
+    public function render(): JsonResponse
+    {
+        $this->setResult([$this->getResponseKey() => $this->getResponseValue()]);
+
+        return response()->json(
+            $this->getResult(),
+            $this->getCode()
+        );
+    }
 }

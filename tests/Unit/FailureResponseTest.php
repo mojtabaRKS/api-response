@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Liateam\ApiResponse\Tests\BaseTestCase;
 use Liateam\ApiResponse\Traits\HasProperty;
 use Liateam\ApiResponse\Responses\FailureResponse;
+use Liateam\ApiResponse\Contracts\ResponseContract;
 
 class FailureResponseTest extends BaseTestCase
 {
@@ -28,7 +29,7 @@ class FailureResponseTest extends BaseTestCase
      */
     public function test_class_uses_hasProperty_trait () : void
     {
-        $this->AssertTrue(in_array(HasProperty::class , class_uses($this->failureResponse)));
+        $this->assertInstanceOf(ResponseContract::class ,$this->failureResponse);
     }
 
     /**
@@ -75,17 +76,24 @@ class FailureResponseTest extends BaseTestCase
      */
     public function test_can_set_error_in_failure_response(): void
     {
-        $this->assertTrue(property_exists($this->failureResponse , 'error'));
-        $this->assertTrue(method_exists($this->failureResponse, 'setError'));
-        $this->assertTrue(method_exists($this->failureResponse, 'getError'));
+        $this->assertTrue(property_exists($this->failureResponse , 'responseKey'));
+        $this->assertTrue(method_exists($this->failureResponse, 'setResponseKey'));
+        $this->assertTrue(method_exists($this->failureResponse, 'getResponseKey'));
+        $this->assertTrue(property_exists($this->failureResponse , 'responseValue'));
+        $this->assertTrue(method_exists($this->failureResponse , 'getResponseValue'));
+        $this->assertTrue(method_exists($this->failureResponse , 'setResponseValue'));
+
+        $failureResponse = $this->failureResponse->setResponseKey('error');
+        $this->assertEquals('error' , $failureResponse->getResponseKey());
+
 
         $fakeError = [
             'error' => $this->faker->sentence,
         ];
 
-        $this->failureResponse->setError($fakeError);
-        $this->assertIsArray($this->failureResponse->getError());
-        $this->assertEquals($fakeError, $this->failureResponse->getError());
+        $this->failureResponse->setResponseValue($fakeError);
+        $this->assertIsArray($this->failureResponse->getResponseValue());
+        $this->assertEquals($fakeError, $this->failureResponse->getResponseValue());
     }
 
     /**
@@ -127,7 +135,8 @@ class FailureResponseTest extends BaseTestCase
             ->setCode(Response::HTTP_OK)
             ->setMessage($this->faker->text)
             ->setSuccessStatus(true)
-            ->setError([
+            ->setResponseKey('error')
+            ->setResponseValue([
                 'name' => $this->faker->name,
                 'email' => $this->faker->email
             ])
