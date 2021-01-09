@@ -10,28 +10,86 @@ trait HasProperty
      *
      * @var int|null $code
      */
-    private $code;
+    protected $code;
 
     /**
      * response status message
      *
      * @var string|null $message
      */
-    private $message;
+    protected $message;
 
     /**
      * response success status
      *
      * @var int $successStatus
      */
-    private $successStatus;
+    protected $successStatus;
+
+    /**
+     * response key
+     *
+     * @var string
+     */
+    protected $responseKey = 'data';
+
+    /**
+     * response value
+     *
+     * @var array
+     */
+    protected $responseValue = [];
 
     /**
      * response result
      *
      * @var array $result
      */
-    private $result = [];
+    protected $result = [];
+
+    /**
+     * set response key
+     *
+     * @param string $key
+     * @return self
+     */
+    public function setResponseKey($key)
+    {
+        $this->responseKey = $key;
+        return $this;
+    }
+
+    /**
+     * get response key
+     *
+     * @return string
+     */
+    public function getResponseKey()
+    {
+        return $this->responseKey;
+    }
+
+    /**
+     * set response value
+     *
+     * @param string $value
+     * @return self
+     */
+    public function setResponseValue($value)
+    {
+        $this->responseValue = $value;
+        return $this;
+    }
+
+    /**
+     * get Response value
+     *
+     * @return string
+     */
+    public function getResponseValue()
+    {
+        return $this->responseValue;
+    }
 
     /**
      * @return int
@@ -91,7 +149,7 @@ trait HasProperty
      * @param array $parameters
      * @return self
      */
-    private function setResult(array $parameters): self
+    protected function setResult(array $parameters): self
     {
         $this->result = array_merge([
             'success' => $this->getSuccessStatus(),
@@ -105,7 +163,7 @@ trait HasProperty
     /**
      * @return array
      */
-    private function getResult(): array
+    protected function getResult(): array
     {
         return $this->result;
     }
