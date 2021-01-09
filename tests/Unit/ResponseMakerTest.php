@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit;
+namespace Liateam\ApiResponse\Tests\Unit;
 
 use RuntimeException;
-use Tests\BaseTestCase;
 use Liateam\ApiResponse\ApiResponse;
+use Liateam\ApiResponse\Tests\BaseTestCase;
 use Liateam\ApiResponse\Contracts\ResponseContract;
 
 class ResponseMakerTest extends BaseTestCase

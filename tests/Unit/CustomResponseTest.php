@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit;
+namespace Liateam\ApiResponse\Tests\Unit;
 
-use Tests\BaseTestCase;
+use Liateam\ApiResponse\Tests\BaseTestCase;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Liateam\ApiResponse\Traits\HasProperty;
@@ -22,8 +22,8 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers Liateam\ApiResponse\Traits\HasProperty
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers HasProperty
+     * @covers CustomResponse::__construct
      * @return void
      */
     public function test_class_uses_hasProperty_trait () : void
@@ -32,9 +32,9 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setCode
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getCode
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers CustomResponse::setCode
+     * @covers CustomResponse::getCode
+     * @covers CustomResponse::__construct
      * @return void
      */
     public function test_can_set_code_in_custom_response(): void
@@ -50,9 +50,9 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setMessage
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getMessage
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers CustomResponse::setMessage
+     * @covers CustomResponse::getMessage
+     * @covers CustomResponse::__construct
      * @return void
      */
     public function test_can_set_message_in_custom_response(): void
@@ -68,9 +68,9 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setAdditional
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getAdditional
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers CustomResponse::setAdditional
+     * @covers CustomResponse::getAdditional
+     * @covers CustomResponse::__construct
      * @return void
      */
     public function test_can_set_additional_in_custom_response(): void
@@ -89,9 +89,9 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setSuccessStatus
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getSuccessStatus
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers CustomResponse::setSuccessStatus
+     * @covers CustomResponse::getSuccessStatus
+     * @covers CustomResponse::__construct
      * @return void
      */
     public function test_can_set_status_in_custom_response(): void
@@ -106,20 +106,20 @@ class CustomResponseTest extends BaseTestCase
         $this->assertEquals($fakeSuccessStatus, $this->customResponse->getSuccessStatus());
     }
 
-    
+
     /**
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::render
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getCode
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getMessage
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getResult
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getSuccessStatus
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setCode
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setMessage
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setResult
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setSuccessStatus
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::getAdditional
-     * @covers Liateam\ApiResponse\Responses\CustomResponse::setAdditional
+     * @covers CustomResponse::render
+     * @covers CustomResponse::getCode
+     * @covers CustomResponse::getMessage
+     * @covers CustomResponse::getResult
+     * @covers CustomResponse::getSuccessStatus
+     * @covers CustomResponse::setCode
+     * @covers CustomResponse::setMessage
+     * @covers CustomResponse::setResult
+     * @covers CustomResponse::setSuccessStatus
+     * @covers CustomResponse::__construct
+     * @covers CustomResponse::getAdditional
+     * @covers CustomResponse::setAdditional
      * @return void
      */
     public function test_can_render_custom_response(): void

@@ -1,12 +1,13 @@
 <?php
 
-namespace Tests\Unit;
+namespace Liateam\ApiResponse\Tests\Unit;
 
-use Tests\BaseTestCase;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
+use Liateam\ApiResponse\Tests\BaseTestCase;
 use Liateam\ApiResponse\Traits\HasProperty;
 use Liateam\ApiResponse\Responses\FailureResponse;
+
 class FailureResponseTest extends BaseTestCase
 {
     /**
