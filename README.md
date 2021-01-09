@@ -65,7 +65,8 @@ ApiResponse::successResponse()
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
     // ->setSuccessStatus(--boolean !!!--)
-    // ->setData(--array-- => [  // --------------> SET DATA METHOD IS ONLY AVAILABLE FOR SUCCESS RESPONSE
+    // ->setResponseKey('data')
+    // ->setResponseValue(--array-- => [  // --------------> SET DATA METHOD IS ONLY AVAILABLE FOR SUCCESS RESPONSE
         'projectName' => 'my awesome project',
         .
         .
@@ -78,7 +79,8 @@ ApiResponse::failureResponse()
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
     // ->setSuccessStatus(--boolean !!!--)
-    // ->setError(--array-- => [ // --------------> SET ERROR METHOD IS ONLY AVAILABLE FOR ERROR RESPONSE
+    // ->setResponseKey('error')
+    // ->setResponseValue(--array-- => [ // --------------> SET ERROR METHOD IS ONLY AVAILABLE FOR ERROR RESPONSE
         'error text' => 'looks like something went wrong',
         .
         .
@@ -91,7 +93,8 @@ ApiResponse::customResponse()
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
     // ->setSuccessStatus(--boolean !!!--)
-    // ->setAttidional(--array-- => [  // --------------> SET ADDITIONAL METHOD IS ONLY AVAILABLE FOR CUSTOM RESPONSE
+    // ->setResponseKey('additional')
+    // ->setResponseValue(--array-- => [  // --------------> SET ADDITIONAL METHOD IS ONLY AVAILABLE FOR CUSTOM RESPONSE
     //    'custom message' => 'custom message goes here',
     //    .
     //    .
@@ -130,7 +133,8 @@ $successResponse = $this->successResponse
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
     // ->setSuccessResponse(--boolean !!!--)
-    // ->setData(--array-- => [  // --------------> SET DATA METHOD IS ONLY AVAILABLE FOR SUCCESS RESPONSE
+    // ->setResponseKey('data')
+    // ->setResponseValue(--array-- => [  // --------------> SET DATA METHOD IS ONLY AVAILABLE FOR SUCCESS RESPONSE
         'projectName' => 'my awesome project',
         .
         .
@@ -144,7 +148,8 @@ $errorResponse = $this->errorResponse
     // ->setCode(xxxx)
     // ->setMessage("blah blah blah blah !")
     // ->setSuccessResponse(--boolean !!!--)
-    // ->setError(--array-- => [ // --------------> SET ERROR METHOD IS ONLY AVAILABLE FOR ERROR RESPONSE
+    // ->setResponseKey('error')
+    // ->setResponseValue(--array-- => [ // --------------> SET ERROR METHOD IS ONLY AVAILABLE FOR ERROR RESPONSE
         'error text' => 'looks like something went wrong',
         .
         .
@@ -155,16 +160,17 @@ $errorResponse = $this->errorResponse
 
 
 $customResponse = $this->customResponse
-            // ->setCode(XXXXX)
-            // ->setMessage('BLAH BLAH BLAH !')
-            // ->setSuccessStatus(BOOLEAN)
-            // ->setAdditional([
-            //    'custom text' => 'custom message here',
-            //    .
-            //    .
-            //    .
-            //])
-            ->render();
+    // ->setCode(XXXXX)
+    // ->setMessage('BLAH BLAH BLAH !')
+    // ->setSuccessStatus(BOOLEAN)
+    // ->setResponseKey('additional')
+    // ->setResponseValue([
+    //    'custom text' => 'custom message here',
+        .
+        .
+        .
+    //])
+    ->render();
 ````
 
 ## Authors

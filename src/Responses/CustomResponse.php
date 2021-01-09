@@ -2,55 +2,23 @@
 
 namespace Liateam\ApiResponse\Responses;
 
-use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\Traits\HasProperty;
 use \Illuminate\Http\Response as HttpResponse;
 use Liateam\ApiResponse\Contracts\ResponseContract;
 
-class CustomResponse implements ResponseContract
+class CustomResponse extends ResponseContract
 {
-    use HasProperty;
-
     /**
-     * @var array
+     * custom response constructor
+     *
+     * @param int $code
+     * @param string $message
+     * @param string $responseKey
      */
-    private $additional = [];
-
-    public function __construct($code = HttpResponse::HTTP_MULTI_STATUS, $message = 'multi status')
+    public function __construct($code = HttpResponse::HTTP_MULTI_STATUS, $message = 'multi status' , $responseKey = 'additional')
     {
-        $this->code = $code;
-        $this->message = $message;
-        $this->successStatus = true;
-    }
-
-    /**
-     * @return array
-     */
-    public function getAdditional(): array
-    {
-        return $this->additional;
-    }
-
-    /**
-     * @param array $additional
-     * @return CustomResponse
-     */
-    public function setAdditional(array $additional): self
-    {
-        $this->additional = $additional;
-        return $this;
-    }
-
-    /**
-     * @return JsonResponse
-     */
-    public function render(): JsonResponse
-    {
-        $this->setResult(['additional' => $this->getAdditional()]);
-
-        return response()->json(
-            $this->getResult(),
-            $this->getCode()
-        );
+        $this->setCode($code);
+        $this->setMessage($message);
+        $this->setSuccessStatus(true);
+        $this->setResponseKey($responseKey);
     }
 }

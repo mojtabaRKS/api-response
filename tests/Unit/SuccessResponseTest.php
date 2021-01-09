@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Liateam\ApiResponse\Tests\BaseTestCase;
 use Liateam\ApiResponse\Traits\HasProperty;
 use Liateam\ApiResponse\Responses\SuccessResponse;
+use Liateam\ApiResponse\Contracts\ResponseContract;
 
 class SuccessResponseTest extends BaseTestCase
 {
@@ -28,7 +29,7 @@ class SuccessResponseTest extends BaseTestCase
      */
     public function test_class_uses_hasProperty_trait () : void
     {
-        $this->AssertTrue(in_array(HasProperty::class, class_uses($this->successResponse)));
+        $this->assertInstanceOf(ResponseContract::class ,$this->successResponse);
     }
 
     /**
@@ -73,17 +74,24 @@ class SuccessResponseTest extends BaseTestCase
      */
     public function test_can_set_data_in_success_response() : void
     {
-        $this->assertTrue(method_exists($this->successResponse, 'setData'));
-        $this->assertTrue(method_exists($this->successResponse, 'getData'));
+        $this->assertTrue(property_exists($this->successResponse, 'responseKey'));
+        $this->assertTrue(method_exists($this->successResponse, 'setResponseKey'));
+        $this->assertTrue(method_exists($this->successResponse, 'getResponseKey'));
+        $this->assertTrue(property_exists($this->successResponse , 'responseValue'));
+        $this->assertTrue(method_exists($this->successResponse , 'getResponseValue'));
+        $this->assertTrue(method_exists($this->successResponse , 'setResponseValue'));
+
+        $successResponse = $this->successResponse->setResponseKey('data');
+        $this->assertEquals('data' , $successResponse->getResponseKey());
 
         $fakeData = [
             'name' => $this->faker->name,
             'email' => $this->faker->email
         ];
 
-        $this->successResponse->setData($fakeData);
-        $this->assertIsArray($this->successResponse->getData());
-        $this->assertEquals($fakeData, $this->successResponse->getData());
+        $this->successResponse->setResponseValue($fakeData);
+        $this->assertIsArray($this->successResponse->getResponseValue());
+        $this->assertEquals($fakeData, $this->successResponse->getResponseValue());
     }
 
     /**
@@ -124,7 +132,8 @@ class SuccessResponseTest extends BaseTestCase
             ->setCode(Response::HTTP_OK)
             ->setMessage($this->faker->text)
             ->setSuccessStatus(true)
-            ->setData([
+            ->setResponseKey('data')
+            ->setResponseValue([
                 'name' => $this->faker->name,
                 'email' => $this->faker->email
             ])
