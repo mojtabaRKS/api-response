@@ -1,0 +1,18 @@
+{
+    "name": "liateam/api-response",
+    "description": "A lighweight package to create appropriate response",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mojtaba Rakhisi",
+            "email": "mojtaba.rakhisi@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Liateam\\ApiResponse\\": "src",
+            "Liateam\\ApiResponse\\Tests\\": "tests"
+        }
+    }
+}
