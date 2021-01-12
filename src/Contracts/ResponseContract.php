@@ -2,14 +2,14 @@
 
 namespace Liateam\ApiResponse\Contracts;
 
-use Illuminate\Http\JsonResponse;
+use \Illuminate\Http\JsonResponse;
 use Liateam\ApiResponse\Traits\HasProperty;
 
 abstract class ResponseContract
 {
     use HasProperty;
 
-
+    
     /**
      * renders the error response
      *

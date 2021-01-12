@@ -11,7 +11,11 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Liateam\\ApiResponse\\": "src",
+            "Liateam\\ApiResponse\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Liateam\\ApiResponse\\Tests\\": "tests"
         }
     }

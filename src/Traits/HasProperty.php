@@ -72,7 +72,7 @@ trait HasProperty
     /**
      * set response value
      *
-     * @param string|array $value
+     * @param string $value
      * @return self
      */
     public function setResponseValue($value)

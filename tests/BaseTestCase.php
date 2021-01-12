@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class BaseTestCase extends TestCase
 {
     /**
-     * @var Factory $faker
+     * @var Faker $faker
      */
     public $faker;
 

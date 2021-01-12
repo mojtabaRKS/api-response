@@ -2,7 +2,7 @@
 
 namespace Liateam\ApiResponse\Responses;
 
-use Illuminate\Http\Response as HttpResponse;
+use \Illuminate\Http\Response as HttpResponse;
 use Liateam\ApiResponse\Contracts\ResponseContract;
 
 class FailureResponse extends ResponseContract
