@@ -1,9 +1,9 @@
 <?php
 
-namespace Liateam\ApiResponse;
+namespace Mojtabarks\ApiResponse;
 
 use RuntimeException;
-use Liateam\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
 
 class ApiResponse
 {
@@ -15,7 +15,7 @@ class ApiResponse
     public static function __callStatic($className, $arguments): ResponseContract
     {
         $className = ucfirst($className);
-        $nameSpace = "Liateam\\ApiResponse\\Responses";
+        $nameSpace = "Mojtabarks\\ApiResponse\\Responses";
         $class = "{$nameSpace}\\{$className}";
 
         if (!class_exists($class)) {

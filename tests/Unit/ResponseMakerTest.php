@@ -1,27 +1,27 @@
 <?php
 
-namespace Liateam\ApiResponse\Tests\Unit;
+namespace Mojtabarks\ApiResponse\Tests\Unit;
 
 use RuntimeException;
-use Liateam\ApiResponse\ApiResponse;
-use Liateam\ApiResponse\Tests\BaseTestCase;
-use Liateam\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\ApiResponse;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
 
 class ResponseMakerTest extends BaseTestCase
 {
 
     /**
-     * @covers \Liateam\ApiResponse\ApiResponse::__callStatic
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\ApiResponse::__callStatic
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\ResponseMakerTest::test_can_create_success_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\ResponseMakerTest::test_can_create_success_response
      */
     public function test_can_create_success_response(): void
     {
@@ -31,16 +31,16 @@ class ResponseMakerTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\ApiResponse::__callStatic
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\ApiResponse::__callStatic
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\ResponseMakerTest::test_can_create_failure_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\ResponseMakerTest::test_can_create_failure_response
      */
     public function test_can_create_failure_response(): void
     {
@@ -50,16 +50,16 @@ class ResponseMakerTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\ApiResponse::__callStatic
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\ApiResponse::__callStatic
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\ResponseMakerTest::test_can_create_custom_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\ResponseMakerTest::test_can_create_custom_response
      */
     public function test_can_create_custom_response(): void
     {
@@ -69,11 +69,11 @@ class ResponseMakerTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\ApiResponse::__callStatic
+     * @covers \Mojtabarks\ApiResponse\ApiResponse::__callStatic
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\ResponseMakerTest::test_if_instance_is_not_valid_throws_exception
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\ResponseMakerTest::test_if_instance_is_not_valid_throws_exception
      */
     public function test_if_instance_is_not_valid_throws_exception()
     {
