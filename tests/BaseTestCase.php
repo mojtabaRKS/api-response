@@ -1,6 +1,6 @@
 <?php
 
-namespace Liateam\ApiResponse\Tests;
+namespace Mojtabarks\ApiResponse\Tests;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;

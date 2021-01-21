@@ -1,5 +1,5 @@
 {
-    "name": "liateam/api-response",
+    "name": "mojtabarks/api-response",
     "description": "A lighweight package to create appropriate response",
     "type": "library",
     "authors": [
@@ -11,12 +11,12 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Liateam\\ApiResponse\\": "src"
+            "Mojtabarks\\ApiResponse\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Liateam\\ApiResponse\\Tests\\": "tests"
+            "Mojtabarks\\ApiResponse\\Tests\\": "tests"
         }
     }
 }

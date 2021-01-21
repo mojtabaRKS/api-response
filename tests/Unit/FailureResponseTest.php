@@ -1,13 +1,13 @@
 <?php
 
-namespace Liateam\ApiResponse\Tests\Unit;
+namespace Mojtabarks\ApiResponse\Tests\Unit;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\Tests\BaseTestCase;
-use Liateam\ApiResponse\Traits\HasProperty;
-use Liateam\ApiResponse\Responses\FailureResponse;
-use Liateam\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
+use Mojtabarks\ApiResponse\Traits\HasProperty;
+use Mojtabarks\ApiResponse\Responses\FailureResponse;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
 
 class FailureResponseTest extends BaseTestCase
 {
@@ -23,13 +23,13 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Traits\HasProperty
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::test_class_uses_hasProperty_trait
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::test_class_uses_hasProperty_trait
      */
     public function test_class_uses_hasProperty_trait(): void
     {
@@ -37,18 +37,18 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setCode
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getCode
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setCode
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getCode
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_code_in_failure_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_code_in_failure_response
      */
     public function test_can_set_code_in_failure_response(): void
     {
@@ -63,18 +63,18 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setMessage
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getMessage
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_message_in_failure_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_message_in_failure_response
      */
     public function test_can_set_message_in_failure_response(): void
     {
@@ -89,20 +89,20 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setResponseKey
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getResponseKey
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setResponseValue
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_error_in_failure_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_error_in_failure_response
      */
     public function test_can_set_error_in_failure_response(): void
     {
@@ -127,18 +127,18 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_status_in_failure_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::test_can_set_status_in_failure_response
      */
     public function test_can_set_status_in_failure_response(): void
     {
@@ -153,26 +153,26 @@ class FailureResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::render
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getCode
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getMessage
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getResult
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setCode
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setMessage
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setResult
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::__construct
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setResponseValue
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::setResponseKey
-     * @covers \Liateam\ApiResponse\Responses\FailureResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::render
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getCode
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getResult
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setCode
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setResult
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\FailureResponse::getResponseKey
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\FailureResponseTest::test_can_render_failure_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\FailureResponseTest::test_can_render_failure_response
      */
     public function test_can_render_failure_response(): void
     {

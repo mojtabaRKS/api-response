@@ -1,9 +1,9 @@
 <?php
 
-namespace Liateam\ApiResponse\Responses;
+namespace Mojtabarks\ApiResponse\Responses;
 
 use Illuminate\Http\Response as HttpResponse;
-use Liateam\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
 
 class SuccessResponse extends ResponseContract
 {

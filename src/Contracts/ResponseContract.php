@@ -1,9 +1,9 @@
 <?php
 
-namespace Liateam\ApiResponse\Contracts;
+namespace Mojtabarks\ApiResponse\Contracts;
 
 use \Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\Traits\HasProperty;
+use Mojtabarks\ApiResponse\Traits\HasProperty;
 
 abstract class ResponseContract
 {

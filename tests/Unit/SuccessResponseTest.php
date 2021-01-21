@@ -1,12 +1,12 @@
 <?php
 
-namespace Liateam\ApiResponse\Tests\Unit;
+namespace Mojtabarks\ApiResponse\Tests\Unit;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\Tests\BaseTestCase;
-use Liateam\ApiResponse\Responses\SuccessResponse;
-use Liateam\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
+use Mojtabarks\ApiResponse\Responses\SuccessResponse;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
 
 class SuccessResponseTest extends BaseTestCase
 {
@@ -22,12 +22,12 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Traits\HasProperty
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
      * @return void
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::test_class_uses_hasProperty_trait
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_class_uses_hasProperty_trait
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
      */
     public function test_class_uses_hasProperty_trait(): void
     {
@@ -35,17 +35,17 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setCode
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getCode
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setCode
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getCode
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_code_in_success_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_code_in_success_response
      */
     public function test_can_set_code_in_success_response(): void
     {
@@ -59,17 +59,17 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setMessage
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getMessage
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_message_in_success_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_message_in_success_response
      */
     public function test_can_set_message_in_success_response(): void
     {
@@ -83,21 +83,21 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResponseKey
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResponseKey
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseValue
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseValue
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_data_in_success_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_data_in_success_response
      */
     public function test_can_set_data_in_success_response(): void
     {
@@ -122,18 +122,18 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_status_in_success_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_set_status_in_success_response
      */
     public function test_can_set_status_in_success_response(): void
     {
@@ -147,25 +147,25 @@ class SuccessResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::render
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getCode
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getMessage
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResult
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setCode
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setMessage
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setResult
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::__construct
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setResponseValue
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::setResponseKey
-     * @covers \Liateam\ApiResponse\Responses\SuccessResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::render
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getCode
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResult
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setCode
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setResult
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseKey
      *
      * @return void
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_render_response
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_render_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
      */
     public function test_can_render_response(): void
     {
