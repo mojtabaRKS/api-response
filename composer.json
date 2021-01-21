@@ -2,6 +2,7 @@
     "name": "mojtabarks/api-response",
     "description": "A lighweight package to create appropriate response",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mojtaba Rakhisi",
