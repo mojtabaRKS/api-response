@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Liateam\ApiResponse\Traits;
+namespace Mojtabarks\ApiResponse\Traits;
 
 trait HasProperty
 {

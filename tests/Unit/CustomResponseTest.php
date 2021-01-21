@@ -1,13 +1,13 @@
 <?php
 
-namespace Liateam\ApiResponse\Tests\Unit;
+namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use Liateam\ApiResponse\Tests\BaseTestCase;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use Liateam\ApiResponse\Traits\HasProperty;
-use Liateam\ApiResponse\Responses\CustomResponse;
-use Liateam\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Traits\HasProperty;
+use Mojtabarks\ApiResponse\Responses\CustomResponse;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
 
 class CustomResponseTest extends BaseTestCase
 {
@@ -23,17 +23,17 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_class_uses_hasProperty_trait
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::test_class_uses_hasProperty_trait
      */
     public function test_class_uses_hasProperty_trait(): void
     {
@@ -41,18 +41,18 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setCode
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getCode
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setCode
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getCode
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_code_in_custom_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_code_in_custom_response
      */
     public function test_can_set_code_in_custom_response(): void
     {
@@ -67,18 +67,18 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setMessage
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getMessage
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_message_in_custom_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_message_in_custom_response
      */
     public function test_can_set_message_in_custom_response(): void
     {
@@ -93,21 +93,21 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResponseKey
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseKey
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseValue
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseValue
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_additional_in_custom_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_additional_in_custom_response
      */
     public function test_can_set_additional_in_custom_response(): void
     {
@@ -131,18 +131,18 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
-     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_status_in_custom_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_status_in_custom_response
      */
     public function test_can_set_status_in_custom_response(): void
     {
@@ -158,26 +158,26 @@ class CustomResponseTest extends BaseTestCase
 
 
     /**
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::render
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getCode
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getMessage
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResult
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setCode
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setMessage
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResult
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setSuccessStatus
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResponseValue
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseValue
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResponseKey
-     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::render
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getCode
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getResult
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setCode
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setMessage
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setResult
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setSuccessStatus
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getResponseValue
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::setResponseKey
+     * @covers \Mojtabarks\ApiResponse\Responses\CustomResponse::getResponseKey
      *
      * @return void
      *
-     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
-     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_render_custom_response
+     * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Mojtabarks\ApiResponse\Tests\Unit\CustomResponseTest::test_can_render_custom_response
      */
     public function test_can_render_custom_response(): void
     {
