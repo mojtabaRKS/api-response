@@ -23,110 +23,161 @@ class CustomResponseTest extends BaseTestCase
     }
 
     /**
-     * @covers CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     *
      * @return void
+     *
+     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_class_uses_hasProperty_trait
      */
-    public function test_class_uses_hasProperty_trait () : void
+    public function test_class_uses_hasProperty_trait(): void
     {
-        $this->assertInstanceOf(ResponseContract::class ,$this->customResponse);
+        self::assertInstanceOf(ResponseContract::class, $this->customResponse);
     }
 
     /**
-     * @covers CustomResponse::setCode
-     * @covers CustomResponse::getCode
-     * @covers CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setCode
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getCode
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     *
      * @return void
+     *
+     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_code_in_custom_response
      */
     public function test_can_set_code_in_custom_response(): void
     {
-        $this->assertTrue(property_exists($this->customResponse, 'code'));
-        $this->assertTrue(method_exists($this->customResponse, 'setCode'));
-        $this->assertTrue(method_exists($this->customResponse, 'setCode'));
+        self::assertTrue(property_exists($this->customResponse, 'code'));
+        self::assertTrue(method_exists($this->customResponse, 'setCode'));
+        self::assertTrue(method_exists($this->customResponse, 'setCode'));
 
         $fakeCode = Response::HTTP_OK;
         $this->customResponse->setCode($fakeCode);
-        $this->assertIsInt($this->customResponse->getCode());
-        $this->assertEquals($fakeCode, $this->customResponse->getCode());
+        self::assertIsInt($this->customResponse->getCode());
+        self::assertEquals($fakeCode, $this->customResponse->getCode());
     }
 
     /**
-     * @covers CustomResponse::setMessage
-     * @covers CustomResponse::getMessage
-     * @covers CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setMessage
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getMessage
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     *
      * @return void
+     *
+     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_message_in_custom_response
      */
     public function test_can_set_message_in_custom_response(): void
     {
-        $this->assertTrue(property_exists($this->customResponse , 'message'));
-        $this->assertTrue(method_exists($this->customResponse, 'setMessage'));
-        $this->assertTrue(method_exists($this->customResponse, 'getMessage'));
+        self::assertTrue(property_exists($this->customResponse, 'message'));
+        self::assertTrue(method_exists($this->customResponse, 'setMessage'));
+        self::assertTrue(method_exists($this->customResponse, 'getMessage'));
 
         $fakeMessage = $this->faker->text;
         $this->customResponse->setMessage($fakeMessage);
-        $this->assertIsString($this->customResponse->getMessage());
-        $this->assertEquals($fakeMessage, $this->customResponse->getMessage());
+        self::assertIsString($this->customResponse->getMessage());
+        self::assertEquals($fakeMessage, $this->customResponse->getMessage());
     }
 
     /**
-     * @covers CustomResponse::setAdditional
-     * @covers CustomResponse::getAdditional
-     * @covers CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResponseKey
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseKey
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseValue
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseValue
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseValue
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setSuccessStatus
+     *
      * @return void
+     *
+     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_additional_in_custom_response
      */
     public function test_can_set_additional_in_custom_response(): void
     {
-        $this->assertTrue(property_exists($this->customResponse , 'responseKey'));
-        $this->assertTrue(method_exists($this->customResponse, 'setResponseKey'));
-        $this->assertTrue(method_exists($this->customResponse, 'getResponseKey'));
-        $this->assertTrue(property_exists($this->customResponse , 'responseValue'));
-        $this->assertTrue(method_exists($this->customResponse , 'getResponseValue'));
-        $this->assertTrue(method_exists($this->customResponse , 'setResponseValue'));
+        self::assertTrue(property_exists($this->customResponse, 'responseKey'));
+        self::assertTrue(method_exists($this->customResponse, 'setResponseKey'));
+        self::assertTrue(method_exists($this->customResponse, 'getResponseKey'));
+        self::assertTrue(property_exists($this->customResponse, 'responseValue'));
+        self::assertTrue(method_exists($this->customResponse, 'getResponseValue'));
+        self::assertTrue(method_exists($this->customResponse, 'setResponseValue'));
 
         $customResponse = $this->customResponse->setResponseKey('additional');
-        $this->assertEquals('additional' , $customResponse->getResponseKey());
+        self::assertEquals('additional', $customResponse->getResponseKey());
 
         $fakeAdditional = [
             'text' => $this->faker->sentence,
         ];
 
         $this->customResponse->setResponseValue($fakeAdditional);
-        $this->assertIsArray($this->customResponse->getResponseValue());
-        $this->assertEquals($fakeAdditional, $this->customResponse->getResponseValue());
+        self::assertIsArray($this->customResponse->getResponseValue());
+        self::assertEquals($fakeAdditional, $this->customResponse->getResponseValue());
     }
 
     /**
-     * @covers CustomResponse::setSuccessStatus
-     * @covers CustomResponse::getSuccessStatus
-     * @covers CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setSuccessStatus
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getSuccessStatus
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setCode
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setMessage
+     * @covers \Liateam\ApiResponse\Traits\HasProperty::setResponseKey
+     *
      * @return void
+     *
+     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_set_status_in_custom_response
      */
     public function test_can_set_status_in_custom_response(): void
     {
-        $this->assertTrue(property_exists($this->customResponse , 'successStatus'));
-        $this->assertTrue(method_exists($this->customResponse, 'setSuccessStatus'));
-        $this->assertTrue(method_exists($this->customResponse, 'getSuccessStatus'));
+        self::assertTrue(property_exists($this->customResponse, 'successStatus'));
+        self::assertTrue(method_exists($this->customResponse, 'setSuccessStatus'));
+        self::assertTrue(method_exists($this->customResponse, 'getSuccessStatus'));
 
         $fakeSuccessStatus = true;
         $this->customResponse->setSuccessStatus($fakeSuccessStatus);
-        $this->assertIsBool($this->customResponse->getSuccessStatus());
-        $this->assertEquals($fakeSuccessStatus, $this->customResponse->getSuccessStatus());
+        self::assertIsBool($this->customResponse->getSuccessStatus());
+        self::assertEquals($fakeSuccessStatus, $this->customResponse->getSuccessStatus());
     }
 
 
     /**
-     * @covers CustomResponse::render
-     * @covers CustomResponse::getCode
-     * @covers CustomResponse::getMessage
-     * @covers CustomResponse::getResult
-     * @covers CustomResponse::getSuccessStatus
-     * @covers CustomResponse::setCode
-     * @covers CustomResponse::setMessage
-     * @covers CustomResponse::setResult
-     * @covers CustomResponse::setSuccessStatus
-     * @covers CustomResponse::__construct
-     * @covers CustomResponse::getAdditional
-     * @covers CustomResponse::setAdditional
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::render
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getCode
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getMessage
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResult
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getSuccessStatus
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setCode
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setMessage
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResult
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setSuccessStatus
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::__construct
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResponseValue
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseValue
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::setResponseKey
+     * @covers \Liateam\ApiResponse\Responses\CustomResponse::getResponseKey
+     *
      * @return void
+     *
+     * @uses   \Liateam\ApiResponse\Tests\BaseTestCase::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::setUp
+     * @uses   \Liateam\ApiResponse\Tests\Unit\CustomResponseTest::test_can_render_custom_response
      */
     public function test_can_render_custom_response(): void
     {
@@ -140,6 +191,6 @@ class CustomResponseTest extends BaseTestCase
             ])
             ->render();
 
-        $this->assertInstanceOf(JsonResponse::class, $customResponse);
+        self::assertInstanceOf(JsonResponse::class, $customResponse);
     }
 }
