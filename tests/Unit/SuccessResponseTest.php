@@ -2,11 +2,11 @@
 
 namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use Mojtabarks\ApiResponse\Tests\BaseTestCase;
-use Mojtabarks\ApiResponse\Responses\SuccessResponse;
+use Illuminate\Http\Response;
 use Mojtabarks\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Responses\SuccessResponse;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
 
 class SuccessResponseTest extends BaseTestCase
 {
@@ -17,14 +17,16 @@ class SuccessResponseTest extends BaseTestCase
 
     public function setUp(): void
     {
-        $this->successResponse = new SuccessResponse;
+        $this->successResponse = new SuccessResponse();
         parent::setUp();
     }
 
     /**
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty
      * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     *
      * @return void
+     *
      * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
      * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_class_uses_hasProperty_trait
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -41,6 +43,7 @@ class SuccessResponseTest extends BaseTestCase
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
+     *
      * @return void
      *
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -65,6 +68,7 @@ class SuccessResponseTest extends BaseTestCase
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setCode
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
+     *
      * @return void
      *
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -93,6 +97,7 @@ class SuccessResponseTest extends BaseTestCase
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseValue
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
+     *
      * @return void
      *
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -112,8 +117,8 @@ class SuccessResponseTest extends BaseTestCase
         self::assertEquals('data', $successResponse->getResponseKey());
 
         $fakeData = [
-            'name' => $this->faker->name,
-            'email' => $this->faker->email
+            'name'  => $this->faker->name,
+            'email' => $this->faker->email,
         ];
 
         $this->successResponse->setResponseValue($fakeData);
@@ -163,6 +168,7 @@ class SuccessResponseTest extends BaseTestCase
      * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::getResponseKey
      *
      * @return void
+     *
      * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::setUp
      * @uses   \Mojtabarks\ApiResponse\Tests\Unit\SuccessResponseTest::test_can_render_response
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -175,8 +181,8 @@ class SuccessResponseTest extends BaseTestCase
             ->setSuccessStatus(true)
             ->setResponseKey('data')
             ->setResponseValue([
-                'name' => $this->faker->name,
-                'email' => $this->faker->email
+                'name'  => $this->faker->name,
+                'email' => $this->faker->email,
             ])
             ->render();
 

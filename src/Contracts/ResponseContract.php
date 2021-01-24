@@ -2,16 +2,15 @@
 
 namespace Mojtabarks\ApiResponse\Contracts;
 
-use \Illuminate\Http\JsonResponse;
+use Illuminate\Http\JsonResponse;
 use Mojtabarks\ApiResponse\Traits\HasProperty;
 
 abstract class ResponseContract
 {
     use HasProperty;
 
-    
     /**
-     * renders the error response
+     * renders the error response.
      *
      * @return JsonResponse
      */

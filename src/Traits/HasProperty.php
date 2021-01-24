@@ -1,66 +1,67 @@
 <?php
 
-
 namespace Mojtabarks\ApiResponse\Traits;
 
 trait HasProperty
 {
     /**
-     * response status code
+     * response status code.
      *
-     * @var int|null $code
+     * @var int|null
      */
     protected $code;
 
     /**
-     * response status message
+     * response status message.
      *
-     * @var string|null $message
+     * @var string|null
      */
     protected $message;
 
     /**
-     * response success status
+     * response success status.
      *
-     * @var int $successStatus
+     * @var int
      */
     protected $successStatus;
 
     /**
-     * response key
+     * response key.
      *
      * @var string
      */
     protected $responseKey = 'data';
 
     /**
-     * response value
+     * response value.
      *
      * @var array
      */
     protected $responseValue = [];
 
     /**
-     * response result
+     * response result.
      *
-     * @var array $result
+     * @var array
      */
     protected $result = [];
 
     /**
-     * set response key
+     * set response key.
      *
      * @param string $key
+     *
      * @return self
      */
     public function setResponseKey($key)
     {
         $this->responseKey = $key;
+
         return $this;
     }
 
     /**
-     * get response key
+     * get response key.
      *
      * @return string
      */
@@ -70,19 +71,21 @@ trait HasProperty
     }
 
     /**
-     * set response value
+     * set response value.
      *
      * @param string $value
+     *
      * @return self
      */
     public function setResponseValue($value)
     {
         $this->responseValue = $value;
+
         return $this;
     }
 
     /**
-     * get Response value
+     * get Response value.
      *
      * @return string
      */
@@ -101,11 +104,13 @@ trait HasProperty
 
     /**
      * @param int|null $code
+     *
      * @return self
      */
     public function setCode(?int $code): self
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -119,11 +124,13 @@ trait HasProperty
 
     /**
      * @param string|null $message
+     *
      * @return self
      */
     public function setMessage(?string $message): self
     {
         $this->message = $message;
+
         return $this;
     }
 
@@ -137,25 +144,28 @@ trait HasProperty
 
     /**
      * @param bool|null $successStatus
+     *
      * @return self
      */
     public function setSuccessStatus(?bool $successStatus): self
     {
         $this->successStatus = $successStatus;
+
         return $this;
     }
 
     /**
      * @param array $parameters
+     *
      * @return self
      */
     protected function setResult(array $parameters): self
     {
         $this->result = array_merge([
             'success' => $this->getSuccessStatus(),
-            'code' => $this->getCode(),
+            'code'    => $this->getCode(),
             'message' => $this->getMessage(),
-        ] , $parameters);
+        ], $parameters);
 
         return $this;
     }
