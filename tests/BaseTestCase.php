@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class BaseTestCase extends TestCase
 {
     /**
-     * @var Faker $faker
+     * @var Faker
      */
     public $faker;
 
@@ -17,5 +17,4 @@ class BaseTestCase extends TestCase
         parent::setUp();
         $this->faker = Factory::create();
     }
-
 }

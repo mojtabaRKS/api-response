@@ -2,14 +2,13 @@
 
 namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use RuntimeException;
 use Mojtabarks\ApiResponse\ApiResponse;
-use Mojtabarks\ApiResponse\Tests\BaseTestCase;
 use Mojtabarks\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
+use RuntimeException;
 
 class ResponseMakerTest extends BaseTestCase
 {
-
     /**
      * @covers \Mojtabarks\ApiResponse\ApiResponse::__callStatic
      * @covers \Mojtabarks\ApiResponse\Responses\SuccessResponse::__construct
@@ -37,6 +36,7 @@ class ResponseMakerTest extends BaseTestCase
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     *
      * @return void
      *
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -56,6 +56,7 @@ class ResponseMakerTest extends BaseTestCase
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setMessage
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setSuccessStatus
      * @covers \Mojtabarks\ApiResponse\Traits\HasProperty::setResponseKey
+     *
      * @return void
      *
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
@@ -70,6 +71,7 @@ class ResponseMakerTest extends BaseTestCase
 
     /**
      * @covers \Mojtabarks\ApiResponse\ApiResponse::__callStatic
+     *
      * @return void
      *
      * @uses   \Mojtabarks\ApiResponse\Tests\BaseTestCase::setUp
