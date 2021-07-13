@@ -73,8 +73,7 @@ trait HasProperty
     /**
      * set response value.
      *
-     * @param string $value
-     *
+     * @param mixed $value
      * @return self
      */
     public function setResponseValue($value)

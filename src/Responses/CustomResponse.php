@@ -13,12 +13,13 @@ class CustomResponse extends ResponseContract
      * @param int    $code
      * @param string $message
      * @param string $responseKey
+     * @param bool $successStatus
      */
-    public function __construct($code = HttpResponse::HTTP_MULTI_STATUS, $message = 'multi status', $responseKey = 'additional')
+    public function __construct($code = HttpResponse::HTTP_MULTI_STATUS, $message = 'multi status' , $responseKey = 'additional', $successStatus = true)
     {
         $this->setCode($code);
         $this->setMessage($message);
-        $this->setSuccessStatus(true);
+        $this->setSuccessStatus($successStatus);
         $this->setResponseKey($responseKey);
     }
 }
