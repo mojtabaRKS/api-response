@@ -2,10 +2,10 @@
 
 namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use RuntimeException;
 use Mojtabarks\ApiResponse\ApiResponse;
-use Mojtabarks\ApiResponse\Tests\BaseTestCase;
 use Mojtabarks\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
+use RuntimeException;
 
 class ResponseMakerTest extends BaseTestCase
 {

@@ -2,11 +2,11 @@
 
 namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use Mojtabarks\ApiResponse\Tests\BaseTestCase;
-use Mojtabarks\ApiResponse\Responses\SuccessResponse;
+use Illuminate\Http\Response;
 use Mojtabarks\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Responses\SuccessResponse;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
 
 class SuccessResponseTest extends BaseTestCase
 {
@@ -17,7 +17,7 @@ class SuccessResponseTest extends BaseTestCase
 
     public function setUp(): void
     {
-        $this->successResponse = new SuccessResponse;
+        $this->successResponse = new SuccessResponse();
         parent::setUp();
     }
 
@@ -61,8 +61,8 @@ class SuccessResponseTest extends BaseTestCase
         $this->assertEquals('data' , $successResponse->getResponseKey());
 
         $fakeData = [
-            'name' => $this->faker->name,
-            'email' => $this->faker->email
+            'name'  => $this->faker->name,
+            'email' => $this->faker->email,
         ];
 
         $this->successResponse->setResponseValue($fakeData);
@@ -89,8 +89,8 @@ class SuccessResponseTest extends BaseTestCase
             ->setSuccessStatus(true)
             ->setResponseKey('data')
             ->setResponseValue([
-                'name' => $this->faker->name,
-                'email' => $this->faker->email
+                'name'  => $this->faker->name,
+                'email' => $this->faker->email,
             ])
             ->render();
 

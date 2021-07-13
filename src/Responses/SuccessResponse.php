@@ -9,7 +9,8 @@ class SuccessResponse extends ResponseContract
 {
     /**
      * CustomResponse constructor.
-     * @param int $code
+     *
+     * @param int    $code
      * @param string $message
      */
     public function __construct($code = HttpResponse::HTTP_OK, $message = 'Ok', $responseKey = 'data')

@@ -2,8 +2,10 @@
 
 namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
+use Mojtabarks\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Responses\FailureResponse;
 use Mojtabarks\ApiResponse\Tests\BaseTestCase;
 use Mojtabarks\ApiResponse\Responses\FailureResponse;
 use Mojtabarks\ApiResponse\Contracts\ResponseContract;
@@ -62,7 +64,6 @@ class FailureResponseTest extends BaseTestCase
         $failureResponse = $this->failureResponse->setResponseKey('error');
         $this->assertEquals('error' , $failureResponse->getResponseKey());
 
-
         $fakeError = [
             'error' => $this->faker->sentence,
         ];
@@ -92,8 +93,8 @@ class FailureResponseTest extends BaseTestCase
             ->setSuccessStatus(true)
             ->setResponseKey('error')
             ->setResponseValue([
-                'name' => $this->faker->name,
-                'email' => $this->faker->email
+                'name'  => $this->faker->name,
+                'email' => $this->faker->email,
             ])
             ->render();
 

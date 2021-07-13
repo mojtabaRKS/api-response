@@ -2,11 +2,12 @@
 
 namespace Mojtabarks\ApiResponse\Tests\Unit;
 
-use Mojtabarks\ApiResponse\Tests\BaseTestCase;
-use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Mojtabarks\ApiResponse\Responses\CustomResponse;
 use Mojtabarks\ApiResponse\Contracts\ResponseContract;
+use Mojtabarks\ApiResponse\Responses\CustomResponse;
+use Mojtabarks\ApiResponse\Tests\BaseTestCase;
+use Mojtabarks\ApiResponse\Traits\HasProperty;
 
 class CustomResponseTest extends BaseTestCase
 {
@@ -84,6 +85,7 @@ class CustomResponseTest extends BaseTestCase
         $this->assertIsBool($this->customResponse->getSuccessStatus());
         $this->assertEquals($fakeSuccessStatus, $this->customResponse->getSuccessStatus());
     }
+
 
     public function test_can_render_custom_response(): void
     {
